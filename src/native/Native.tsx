@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { useForm } from "./hooks/useForm";
-import { DeleteRowButton } from "../common/components/DeleteRowButton";
-import { AddRowButton } from "../common/components/AddRowButton";
-import { RowInput } from "../common/components/RowInput";
+import { DeleteRowButton } from "./components/DeleteRowButton";
+import { AddRowButton } from "./components/AddRowButton";
+import { RowInput } from "./components/RowInput";
 
 export const Native: FC = () => {
   const { formState, addFormRow, deleteFormRow, setFormRow } = useForm();
