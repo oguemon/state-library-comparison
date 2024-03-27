@@ -10,6 +10,7 @@ export const Native: FC = () => {
   return (
     <section>
       <h1>useReducer</h1>
+      <AddRowButton onClick={() => addFormRow()} />
       {formState.form.map((form, index) => {
         return (
           <p key={form.id}>
@@ -22,7 +23,6 @@ export const Native: FC = () => {
           </p>
         );
       })}
-      <AddRowButton onClick={() => addFormRow()} />
     </section>
   );
 };

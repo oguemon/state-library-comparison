@@ -10,6 +10,7 @@ export const Native: FC = () => {
   return (
     <section>
       <h1>useReducer With Context</h1>
+      <AddRowButton />
       {formState.form.map(({ id }, index) => {
         return (
           <p key={id}>
@@ -18,7 +19,6 @@ export const Native: FC = () => {
           </p>
         );
       })}
-      <AddRowButton />
     </section>
   );
 };
