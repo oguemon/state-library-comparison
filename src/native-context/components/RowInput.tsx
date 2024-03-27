@@ -1,11 +1,11 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import { useFormContext } from "../contexts/useFormContexts";
 
 type Props = {
   rowIndex: number;
 };
 
-export const RowInput: FC<Props> = ({ rowIndex }) => {
+const Component: FC<Props> = ({ rowIndex }) => {
   const { formState, setFormRow } = useFormContext();
   const { label, checked } = formState.form[rowIndex];
 
@@ -20,3 +20,5 @@ export const RowInput: FC<Props> = ({ rowIndex }) => {
     </label>
   );
 };
+
+export const RowInput = memo(Component);

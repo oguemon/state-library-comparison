@@ -1,8 +1,7 @@
 import { FC } from "react";
-import { DeleteRowButton } from "./components/DeleteRowButton";
 import { AddRowButton } from "./components/AddRowButton";
-import { RowInput } from "./components/RowInput";
 import { useFormContext } from "./contexts/useFormContexts";
+import { Row } from "./components/Row";
 
 export const Native: FC = () => {
   const { formState } = useFormContext();
@@ -12,12 +11,7 @@ export const Native: FC = () => {
       <h1>useReducer With Context</h1>
       <AddRowButton />
       {formState.form.map(({ id }, index) => {
-        return (
-          <p key={id}>
-            <RowInput rowIndex={index} />
-            <DeleteRowButton rowIndex={index} />
-          </p>
-        );
+        return <Row key={id} rowIndex={index} />;
       })}
     </section>
   );

@@ -1,11 +1,11 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import { useFormContext } from "../contexts/useFormContexts";
 
 type Props = {
   rowIndex: number;
 };
 
-export const DeleteRowButton: FC<Props> = ({ rowIndex }) => {
+const Component: FC<Props> = ({ rowIndex }) => {
   const { deleteFormRow } = useFormContext();
 
   return (
@@ -14,3 +14,5 @@ export const DeleteRowButton: FC<Props> = ({ rowIndex }) => {
     </button>
   );
 };
+
+export const DeleteRowButton = memo(Component);

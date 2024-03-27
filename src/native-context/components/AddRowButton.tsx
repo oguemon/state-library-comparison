@@ -1,11 +1,11 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import { useFormContext } from "../contexts/useFormContexts";
 
 type Props = {
   // empty
 };
 
-export const AddRowButton: FC<Props> = () => {
+const Component: FC<Props> = () => {
   const { addFormRow } = useFormContext();
 
   return (
@@ -14,3 +14,5 @@ export const AddRowButton: FC<Props> = () => {
     </button>
   );
 };
+
+export const AddRowButton = memo(Component);

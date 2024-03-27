@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 
 type Props = {
   label: string;
@@ -6,7 +6,7 @@ type Props = {
   onChange: (newValue: boolean) => void;
 };
 
-export const RowInput: FC<Props> = ({ label, checked, onChange }) => {
+const Component: FC<Props> = ({ label, checked, onChange }) => {
   return (
     <label>
       <input
@@ -18,3 +18,5 @@ export const RowInput: FC<Props> = ({ label, checked, onChange }) => {
     </label>
   );
 };
+
+export const RowInput = memo(Component);
